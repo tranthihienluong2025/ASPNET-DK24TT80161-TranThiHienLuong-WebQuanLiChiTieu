@@ -1,0 +1,188 @@
+﻿@{
+    ViewData["Title"] = "Trang Chủ";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<section class="hero-section text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <span class="badge bg-primary-soft mb-3">#LàmChủDòngTiền</span>
+                <h1 class="hero-title">Giải pháp Thông minh cho Hành trình Tài chính Vững bền</h1>
+                <p class="hero-subtitle">
+                    Theo dõi thu chi dễ dàng, nắm bắt thói quen tiêu dùng và tối ưu hóa ngân sách cá nhân.
+                    Cùng chúng tôi xây dựng tương lai tài chính an tâm và tự chủ ngay từ hôm nay.
+                </p>
+                <div class="hero-buttons">
+                    <a asp-controller="Account" asp-action="Register" class="btn btn-primary btn-lg">Dùng thử miễn phí</a>
+                    <a asp-controller="Account" asp-action="Login" class="btn btn-secondary btn-lg">Vào bảng điều khiển</a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-container mt-5">
+            <img src="~/images/NuNmvZT.jpg" alt="Dashboard Mockup" class="img-fluid rounded shadow-lg" />
+        </div>
+    </div>
+</section>
+
+<section id="tinh-nang" class="detailed-features-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title">Trải nghiệm quản lý tài chính hiện đại</h2>
+            <p class="section-subtitle">Mọi tính năng được thiết kế để giúp bạn kiểm soát dòng tiền một cách toàn diện và khoa học, ngay trên một ứng dụng duy nhất.</p>
+        </div>
+        <div class="row align-items-center feature-item">
+            <div class="col-lg-6">
+                <div class="feature-content">
+                    <div class="icon-box bg-success-soft text-success"><i class="bi bi-journal-check"></i></div>
+                    <h2>Ghi nhận thu chi tức thì, đa dạng danh mục</h2>
+                    <p>Thao tác nhanh gọn để ghi lại bất kỳ khoản thu hay chi nào. Hệ thống hỗ trợ danh mục tùy chỉnh linh hoạt, giúp bạn phân loại giao dịch theo đúng nhu cầu cá nhân.</p>
+                    <ul class="list-unstyled feature-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Tạo danh mục thu/chi không giới hạn.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Nhập liệu nhanh với gợi ý thông minh.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Đính kèm hình ảnh cho mỗi giao dịch.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="~/images/3-meo-quan-ly-chi-tieu.jpg" alt="Add Expense Feature" class="img-fluid rounded shadow" />
+            </div>
+        </div>
+        <div class="row align-items-center feature-item flex-row-reverse">
+            <div class="col-lg-6">
+                <div class="feature-content">
+                    <div class="icon-box bg-warning-soft text-warning"><i class="bi bi-pie-chart-fill"></i></div>
+                    <h2>Phân tích chuyên sâu, báo cáo trực quan</h2>
+                    <p>Các biểu đồ tương tác và báo cáo chi tiết giúp bạn nhìn thấy bức tranh toàn cảnh về tài chính của mình. Dễ dàng nhận diện xu hướng chi tiêu theo thời gian để điều chỉnh kịp thời.</p>
+                    <ul class="list-unstyled feature-list">
+                        <li><i class="bi bi-check-circle-fill"></i> Thống kê thu - chi theo từng nhóm.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Biểu đồ so sánh giữa các kỳ.</li>
+                        <li><i class="bi bi-check-circle-fill"></i> Xuất báo cáo dạng ảnh, PDF, Excel.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="~/images/cach-ve-bieu-do-trong-powerpoint-va-nhung-tuy-chinh-bieu-02-800x450.jpg" alt="Charts Feature" class="img-fluid rounded shadow" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works-section text-center">
+    <div class="container">
+        <h2 class="section-title">Bắt đầu hành trình tự chủ tài chính trong 3 bước</h2>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-icon"><span>1</span></div>
+                    <h3>Đăng ký tài khoản</h3>
+                    <p>Hoàn toàn miễn phí, chỉ mất vài giây với email của bạn.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-icon"><span>2</span></div>
+                    <h3>Nhập giao dịch</h3>
+                    <p>Cập nhật các khoản thu nhập và chi tiêu hàng ngày.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-icon"><span>3</span></div>
+                    <h3>Đánh giá & cải thiện</h3>
+                    <p>Xem báo cáo và điều chỉnh thói quen chi tiêu hiệu quả.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="ve-chung-toi" class="about-us-section text-center">
+    <div class="container">
+        <h2 class="section-title">Sứ mệnh của chúng tôi</h2>
+        <p class="section-subtitle">
+            Chúng tôi mong muốn thay đổi cách mọi người tiếp cận việc quản lý tài chính cá nhân. Hãy để chúng tôi đồng hành cùng bạn trên con đường xây dựng một cuộc sống an toàn, độc lập và thịnh vượng.
+        </p>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="value-card">
+                    <div class="icon-box bg-primary-soft text-primary"><i class="bi bi-shield-check"></i></div>
+                    <h4>Cam kết bảo mật tuyệt đối</h4>
+                    <p>Dữ liệu cá nhân và tài chính của bạn được mã hóa và bảo vệ nghiêm ngặt theo chuẩn quốc tế.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="value-card">
+                    <div class="icon-box bg-primary-soft text-primary"><i class="bi bi-lightbulb"></i></div>
+                    <h4>Trải nghiệm tối ưu</h4>
+                    <p>Thiết kế tập trung vào sự đơn giản, dễ dùng, phù hợp với mọi đối tượng, từ người mới bắt đầu.</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="value-card">
+                    <div class="icon-box bg-primary-soft text-primary"><i class="bi bi-people-fill"></i></div>
+                    <h4>Đồng hành cùng người Việt</h4>
+                    <p>Lắng nghe và thấu hiểu nhu cầu thực tế của người dùng Việt Nam để liên tục cải tiến.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title text-center">Người dùng đã trải nghiệm như thế nào?</h2>
+        <div class="row mt-5">
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <blockquote class="blockquote">
+                        <p>"Tôi đã thử nhiều ứng dụng, nhưng đây là công cụ phù hợp nhất. Đơn giản, dễ hiểu và thực sự hiệu quả trong việc kiểm soát dòng tiền."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="~/images/senior-man-white-sweater-eyeglasses.jpg" alt="User Avatar">
+                        <div>
+                            <h6 class="mb-0">Chị Thu Hà</h6>
+                            <small class="text-muted">Quản lý cấp cao</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <blockquote class="blockquote">
+                        <p>"Nhờ báo cáo trực quan, tôi nhận ra mình đang lãng phí tiền vào những thứ không cần thiết. Cảm ơn đội ngũ đã tạo ra sản phẩm hữu ích này!"</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="~/images/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg" alt="User Avatar">
+                        <div>
+                            <h6 class="mb-0">Anh Đức Minh</h6>
+                            <small class="text-muted">Chủ doanh nghiệp nhỏ</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <blockquote class="blockquote">
+                        <p>"Thiết kế đẹp, thao tác mượt mà. Tôi thích nhất là tính năng đặt mục tiêu tiết kiệm, giúp tôi có động lực hơn mỗi ngày."</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="~/images/young-woman-with-round-glasses-yellow-sweater.jpg" alt="User Avatar">
+                        <div>
+                            <h6 class="mb-0">Bạn Thanh Tú</h6>
+                            <small class="text-muted">Nhà sáng tạo nội dung</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="final-cta-section text-center text-white">
+    <div class="container">
+        <h2>Bắt đầu xây dựng tương lai tài chính của bạn ngay bây giờ</h2>
+        <p class="lead my-4">Đừng chờ đến khi quá muộn. <br>Hãy tham gia cùng hàng ngàn người dùng đang làm chủ dòng tiền mỗi ngày.</p>
+        <a asp-controller="Account" asp-action="Register" class="btn btn-light btn-lg">Đăng ký miễn phí</a>
+    </div>
+</section>

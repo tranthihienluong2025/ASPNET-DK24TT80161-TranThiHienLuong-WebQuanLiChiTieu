@@ -1,0 +1,354 @@
+﻿/* =================================================================
+   File: wwwroot/css/dashboard.css
+   Mô tả: File CSS hoàn chỉnh và tối ưu cho giao diện Dashboard.
+   Phiên bản: Final
+   ================================================================= */
+
+/* ----- 1. Biến màu & Cài đặt chung ----- */
+:root {
+    --primary-color: #ffcc33; /* Vàng chủ đạo - Nữ tính sáng */
+    --success-color: #a7e66b;
+    --warning-color: #ffe066;
+    --info-color: #7ed6ff;
+    --danger-color: #ff8866; /* Cam đỏ nhạt, không hồng */
+    /* Chế độ Sáng - Theme Vàng */
+    --sidebar-bg: #fff9e6;
+    --main-bg: #fff4d9;
+    --text-color: #5c4a2f;
+    --heading-color: #3f2e1a;
+    --border-color: #ffe6b3;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(255, 190, 50, 0.16);
+    --primary-soft: rgba(255, 204, 51, 0.18);
+}
+
+.dark-mode {
+    /* Chế độ Tối - Theme Vàng */
+    --sidebar-bg: #3a3328;
+    --main-bg: #2c2720;
+    --text-color: #d4c9a8;
+    --heading-color: #e8d9b0;
+    --border-color: #524832;
+    --card-bg: #3a3328;
+    --shadow-color: rgba(0, 0, 0, 0.35);
+    --primary-soft: rgba(255, 204, 51, 0.22);
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    background-color: var(--main-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* ----- 2. Bố cục chính (Layout) ----- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 260px;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    transition: left 0.3s ease-in-out, background-color 0.3s;
+    z-index: 1001;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+    .sidebar::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .sidebar::-webkit-scrollbar-thumb {
+        background-color: var(--border-color);
+        border-radius: 3px;
+    }
+
+.main-content {
+    margin-left: 260px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 12px 30px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    padding: 30px;
+}
+
+.footer {
+    padding: 20px 30px;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+}
+
+
+/* ----- 3. Các thành phần Sidebar ----- */
+.sidebar-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.sidebar-nav {
+    padding: 15px 0;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-item {
+    padding: 0 15px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+    .nav-link i {
+        font-size: 1.2rem;
+    }
+
+    .nav-link:hover, .nav-link.active {
+        background-color: var(--primary-soft);
+        color: var(--primary-color);
+    }
+
+.nav-heading {
+    padding: 20px 30px 10px 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ----- 4. Các thành phần Top Navbar ----- */
+.page-title {
+    color: var(--heading-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info {
+    font-weight: 500;
+    color: var(--heading-color);
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.logout-btn {
+    color: var(--danger-color);
+}
+
+/* Nút bật/tắt menu trên mobile */
+.sidebar-toggler {
+    display: none; /* Mặc định ẩn trên desktop */
+    font-size: 1.5rem;
+}
+
+
+/* ----- 5. Các thành phần chung (Components) ----- */
+.card {
+    background-color: var(--card-bg);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.stat-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px var(--shadow-color);
+    }
+
+    .stat-card .card-subtitle {
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+.stat-icon-sm {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.table .badge {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    font-weight: 500;
+}
+
+
+/* ----- 6. Responsive cho Mobile ----- */
+@media (max-width: 992px) {
+    .sidebar {
+        left: -260px; /* Ẩn sidebar mặc định */
+    }
+
+        .sidebar.active {
+            left: 0; /* Hiện sidebar khi có class active */
+        }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggler {
+        display: block; /* Hiện nút toggler */
+    }
+
+    .user-info {
+        display: none; /* Ẩn tên user cho gọn */
+    }
+}
+
+/* Thêm vào cuối file dashboard.css */
+.bg-danger-soft {
+    background-color: rgba(255, 136, 102, 0.1);
+}
+
+/* Thêm vào cuối file */
+.notification-bell {
+    position: relative;
+}
+
+.notification-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(40%, -40%);
+    font-size: 0.65rem;
+    padding: 0.2em 0.5em;
+}
+
+/* Thêm vào cuối file */
+.notification-dropdown {
+    width: 350px;
+    padding: 0;
+    border: 1px solid var(--border-color);
+}
+
+    .notification-dropdown .dropdown-header,
+    .notification-dropdown .dropdown-footer a {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+
+.notification-item .dropdown-item {
+    padding: 10px 15px;
+    white-space: normal;
+}
+
+.notification-item.unread {
+    background-color: var(--primary-soft);
+}
+
+.notification-item p {
+    font-size: 0.9rem;
+    color: var(--heading-color);
+}
+
+.notification-item small {
+    font-size: 0.75rem;
+}
+
+/* ======================================================
+   ----- SỬA LỖI MÀU CHỮ TRONG CHẾ ĐỘ TỐI -----
+   ====================================================== */
+
+/* Đảm bảo các tiêu đề trong card sử dụng đúng màu của theme */
+.card .card-title,
+.card .card-header h1,
+.card .card-header h2,
+.card .card-header h3,
+.card .card-header h4,
+.card .card-header h5,
+.card .card-header h6 {
+    color: var(--heading-color);
+}
+
+/* Đảm bảo chữ trong card-body và bảng sử dụng đúng màu của theme */
+.card .card-body,
+.card .card-body p,
+.table th,
+.table td,
+.list-group-item {
+    color: var(--text-color);
+}
+
+/* Đảm bảo các danh sách trong card có nền trong suốt để lấy màu của card */
+.list-group-flush {
+    background-color: transparent;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border-color: var(--border-color);
+}
+
+/* Đảm bảo các liên kết trong card sử dụng đúng màu của theme */
+.card-body a {
+    color: var(--primary-color);
+}
+
+/* Thêm vào cuối file */
+.navbar-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}

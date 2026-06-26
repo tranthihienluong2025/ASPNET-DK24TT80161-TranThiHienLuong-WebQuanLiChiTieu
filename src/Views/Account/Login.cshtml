@@ -1,0 +1,97 @@
+﻿@model QuanLyChiTieu.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Đăng Nhập";
+    Layout = "~/Views/Shared/_LayoutLanding.cshtml";
+}
+
+<div class="login-page-wrapper">
+    <div class="login-container">
+        <div class="login-aside">
+            <img src="~/images/money.jpg" alt="Chào mừng" class="welcome-image" />
+        </div>
+
+        <div class="login-form-section">
+            <h2 class="form-title">Đăng Nhập Tài Khoản</h2>
+            <p class="form-subtitle">Chào mừng bạn quay lại! Vui lòng nhập thông tin.</p>
+
+            @if (ViewBag.SuccessMessage != null)
+            {
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @ViewBag.SuccessMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+            }
+
+            <form asp-action="Login" method="post" class="mt-4">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Email" class="form-label">Địa chỉ Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                        <input asp-for="Email" class="form-control" placeholder="vidu@email.com" />
+                    </div>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Password" class="form-label">Mật khẩu</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                        <input asp-for="Password" class="form-control" placeholder="••••••••" />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                            <i class="bi bi-eye-slash"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div class="form-check">
+                        <input asp-for="RememberMe" class="form-check-input" />
+                        <label asp-for="RememberMe" class="form-check-label"></label>
+                    </div>
+                    <a asp-controller="Account" asp-action="ForgotPassword" class="forgot-password-link">Quên mật khẩu?</a>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">ĐĂNG NHẬP</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-4">
+                <p class="register-link">Chưa có tài khoản? <a asp-controller="Account" asp-action="Register">Đăng ký ngay</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+        <script>
+            // SCRIPT MỚI CHO CHỨC NĂNG HIỆN/ẨN MẬT KHẨU
+            document.addEventListener('DOMContentLoaded', function () {
+                const togglePassword = document.getElementById('togglePassword');
+                const passwordInput = document.getElementById('Password');
+                const eyeIcon = togglePassword.querySelector('i');
+
+                togglePassword.addEventListener('click', function () {
+                    // Chuyển đổi type của input
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+
+                    // Chuyển đổi icon
+                    if (type === 'password') {
+                        eyeIcon.classList.remove('bi-eye');
+                        eyeIcon.classList.add('bi-eye-slash');
+                    } else {
+                        eyeIcon.classList.remove('bi-eye-slash');
+                        eyeIcon.classList.add('bi-eye');
+                    }
+                });
+            });
+        </script>
+}
