@@ -3,7 +3,7 @@
 
 ### THÔNG TIN SINH VIÊN & GIẢNG VIÊN HƯỚNG DẪN
 * **Sinh viên thực hiện**: Trần Thị Hiền Lương
-* **MSSV**: 170124022
+* **MSSV**: 170124414
 * **Mã lớp**: DK24TT80161
 * **Email**: tranthihienluong2025@gmail.com
 * **Giảng viên hướng dẫn**: ThS. Đoàn Phước Miền
