@@ -6,7 +6,6 @@
 * **MSSV**: 170124022
 * **Mã lớp**: DK24TTG1
 * **Email**: tranthihienluong2025@gmail.com
-* **SĐT**: [Cung cấp số điện thoại của bạn]
 * **Giảng viên hướng dẫn**: ThS. Đoàn Phước Miền
 
 ---
